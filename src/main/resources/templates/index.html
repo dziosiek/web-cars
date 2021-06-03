@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form th:action="@{/carlist}">
+    <input type="text" th:name="fuelConsumption"/>
+
+    <select th:name="carBrand">
+        <option th:each="brand: ${brands}" th:text=${brand} value="${brand}">
+        </option>
+    </select>
+    <select th:name="yearOfProduction">
+        <option value="1">2001</option>
+        <option value="2">2002</option>
+        <option value="3">2003</option>
+        <option value="4">2004</option>
+    </select>
+
+    <button type="submit">check-in</button>
+
+</form>
+</body>
+</html>
