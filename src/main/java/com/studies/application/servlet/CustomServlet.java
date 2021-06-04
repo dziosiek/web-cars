@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.io.PrintWriter;
 
 
 public class CustomServlet extends HttpServlet {
@@ -19,7 +20,13 @@ public class CustomServlet extends HttpServlet {
             HttpServletRequest req,
             HttpServletResponse resp) throws ServletException, IOException {
         logger.info("CustomServlet doGet() method is invoked");
-        super.doGet(req, resp);
+//        req.getRequestDispatcher("/upload.jsp").forward(req, resp);
+        // Set response content type
+        resp.setContentType("text/html");
+
+        // Actual logic goes here.
+        PrintWriter out = resp.getWriter();
+        out.println("<h1>" + "abcd" + "</h1>");
 
     }
 
