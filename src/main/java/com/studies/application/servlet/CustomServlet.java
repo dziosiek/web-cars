@@ -24,9 +24,7 @@ public class CustomServlet extends HttpServlet {
         // Set response content type
         resp.setContentType("text/html");
 
-        // Actual logic goes here.
-        PrintWriter out = resp.getWriter();
-        out.println("<h1>" + "abcd" + "</h1>");
+        req.getRequestDispatcher("/WEB-INF/jsp/upload.jsp").forward(req, resp);
 
     }
 
