@@ -1,7 +1,8 @@
 package com.studies.application.config.webconfig;
 
 import com.studies.application.config.listener.CustomListener;
-import com.studies.application.servlet.CustomServlet;
+import com.studies.application.servlet.CarListServlet;
+import com.studies.application.servlet.FindCarServlet;
 import org.springframework.boot.web.servlet.ServletListenerRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
@@ -13,9 +14,16 @@ import javax.servlet.ServletContextListener;
 public class WebConf {
 
     @Bean
-    public ServletRegistrationBean customServletBean() {
+    public ServletRegistrationBean findCar() {
         ServletRegistrationBean bean
-                = new ServletRegistrationBean(new CustomServlet(), "/servlet");
+                = new ServletRegistrationBean(new FindCarServlet(), "/findcar");
+        return bean;
+    }
+
+    @Bean
+    public ServletRegistrationBean carList() {
+        ServletRegistrationBean bean
+                = new ServletRegistrationBean(new CarListServlet(), "/carlist");
         return bean;
     }
 

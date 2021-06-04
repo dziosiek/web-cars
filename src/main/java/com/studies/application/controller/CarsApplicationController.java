@@ -18,7 +18,8 @@ public class CarsApplicationController {
         return "index";
     }
 
-    @GetMapping(path = "/carlist")
+    //Nieużywana metoda zastąpiona przez JSP
+    @GetMapping(path = "/carlist-not-used")
     public String carList(@RequestParam(name = "typeOfCar") String typeOfCar,
                           @RequestParam(name = "carBrand") String carBrand,
                           @RequestParam(name = "yearOfProduction") String yearOfProduction,
