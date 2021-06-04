@@ -8,12 +8,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
-import java.io.PrintWriter;
 
+public class FindCarServlet extends HttpServlet {
 
-public class CustomServlet extends HttpServlet {
-
-    Logger logger = LoggerFactory.getLogger(CustomServlet.class);
+    Logger logger = LoggerFactory.getLogger(FindCarServlet.class);
 
     @Override
     protected void doGet(
@@ -24,7 +22,7 @@ public class CustomServlet extends HttpServlet {
         // Set response content type
         resp.setContentType("text/html");
 
-        req.getRequestDispatcher("/WEB-INF/jsp/upload.jsp").forward(req, resp);
+        req.getRequestDispatcher("/WEB-INF/jsp/findcar.jsp").forward(req, resp);
 
     }
 
